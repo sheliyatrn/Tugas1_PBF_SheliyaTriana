@@ -134,16 +134,17 @@ Kita akan membuat 2 views, yaitu page header dan footer.
     <h1><?= esc($title) ?></h1>
     <!-- esc fungsi global yang disediakan oleh CodeIgniter untuk membantu mencegah serangan XSS -->
 ```
-Header berisi kode HTML dasar yang ingin di tampilkan sebelum memuat tampilan utama, bersama dengan judul,serta menampilkan $title variabel, yang akan kita definisikan nanti di controller. Berikut tampilan header
+Header berisi kode HTML dasar yang ingin di tampilkan sebelum memuat tampilan utama, bersama dengan judul,serta menampilkan $title variabel, yang akan kita definisikan nanti di controller. Berikut tampilan header.
 
 2. Footer
    Buat file footer di `app/Views/templates/footer.php` dan isikan kode berikut :
-``shell
+```shell
 <em>&copy; 2024</em>
 </body>
 
 </html>
 ```
+
 ### **Menambah Logika Controller**
 #### **Membuat home.php & about.php**
 Tambahkan folder `pages` di `app/Views/` lalu tambahkan dua file bernama `home.php` dan `about.php` pada `app/Views/pages/`.
@@ -185,6 +186,7 @@ Tambahkan folder `pages` di `app/Views/` lalu tambahkan dua file bernama `home.p
 ```
 
 #### **Lengkapi controller pages**
+Tambahkan method `view()` pada file di `app/Controllers/Pages.php` 
 ```shell
 <?php
 
@@ -405,8 +407,7 @@ class News extends BaseController
 ```
 
 5. Tambahkan Method `News::show()` pada `app/controllers/News.php`
-   
-   ```
+```
  public function show($slug = null)
     {
         $model = model(NewsModel::class);
@@ -426,18 +427,18 @@ class News extends BaseController
 ```
 
 6. Buat tampilan news di `app/Views/news/view.php`
-```
-- menamplkan judul berita
-<h2><?= esc($news['title']) ?></h2>
 
-- menampilkan isi
+```
+//menamplkan judul berita
+<h2><?= esc($news['title']) ?></h2>
+//menampilkan isi
 <p><?= esc($news['body']) ?></p>
 ```
 
 7. Tampilan
 Buka file news pada browser `localhost:8080/news`
 ![image](https://github.com/sheliyatrn/TUGAS-1_PBF/assets/134477604/b73fe156-8767-439d-9dd7-7256e0af972b)
-view artikel salah satu berita
+- View artikel salah satu berita
 ![image](https://github.com/sheliyatrn/TUGAS-1_PBF/assets/134477604/ca89b880-57f5-4ca7-87f1-397b30ac6afd)
 
 ## Create News Item
@@ -560,15 +561,18 @@ class News extends BaseController
             . view('news/success')
             . view('templates/footer');
     }
-    ```
+```
 
 4. Success page
    Buat tampilan di `app/Views/news/success.php` dan tulis pesan sukses.
-```
+
+```php
 <p>News item created successfully.</p>
 ```
 
-5. Edit `NewsModel` menjadi
+5. Edit `NewsModel` di `app/Models/NewsModel.php` menjadi seperti berikut :
+
+   Menambahkan properti `$allowedFields` untuk keperluan insert & update data.
    
 ```php
 <?php
@@ -597,7 +601,7 @@ class NewsModel extends Model
    
 ![image](https://github.com/sheliyatrn/TUGAS-1_PBF/assets/134477604/bf195f13-9d25-4127-a660-68cefdb4e16b)
 
-lalu klik button create new news item
+Lalu klik button `create news item`
 
 8. Tampilan Success page
    
