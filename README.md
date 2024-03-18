@@ -74,7 +74,7 @@ Melakukan konfigurasi database pada project dapat dengan melalui file `app/Confi
 ## Bangun Aplikasi Pertama
 
 ## Static Pages
-#### **Setting Routing**
+### **Setting Routing**
 Buka file route yang berlokasi di `app/Config/Routes.php` yang berisi
 ```shell
 <?php
