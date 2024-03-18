@@ -606,6 +606,9 @@ Lalu klik button `create news item`
 8. Tampilan Success page
    
 ![image](https://github.com/sheliyatrn/TUGAS-1_PBF/assets/134477604/598cf690-4348-457a-9e5a-66253c525c27)
+- Tampilan berita baru yang sudah ditambahkan
+![image](https://github.com/sheliyatrn/Tugas1_PBF_SheliyaTriana/assets/134477604/c6ef5d6c-ece7-4698-9b5f-f7556ae9cf51)
+
 ## General Topic
 ### **Error Handling**
 Secara default, CodeIgniter akan menampilkan laporan kesalahan terperinci dengan semua kesalahan di lingkungan developmentdan testing.
