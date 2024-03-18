@@ -405,6 +405,7 @@ class News extends BaseController
 ```
 
 5. Tambahkan Method `News::show()` pada `app/controllers/News.php`
+   
    ```
  public function show($slug = null)
     {
@@ -426,10 +427,10 @@ class News extends BaseController
 
 6. Buat tampilan news di `app/Views/news/view.php`
 ```
-//menamplkan judul berita
+- menamplkan judul berita
 <h2><?= esc($news['title']) ?></h2>
 
-//menampilkan isi
+- menampilkan isi
 <p><?= esc($news['body']) ?></p>
 ```
 
